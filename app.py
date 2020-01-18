@@ -35,11 +35,17 @@ class Message(QtWidgets.QMainWindow, Ui_Dialog):
     def __init__(self, parent=None):
         super(Message, self).__init__(parent)
         self.setupUi(self)
+        resolution = QtWidgets.QDesktopWidget().screenGeometry()
+        self.move((resolution.width() / 2) - (self.frameSize().width() / 2),
+                  (resolution.height() / 2) - (self.frameSize().height() / 2))
 
 class App(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super(App, self).__init__(parent)
         self.setupUi(self)
+        resolution = QtWidgets.QDesktopWidget().screenGeometry()
+        self.move((resolution.width() / 2) - (self.frameSize().width() / 2),
+                  (resolution.height() / 2) - (self.frameSize().height() / 2))
         self.btn_open.clicked.connect(self.btn_open_Clicked)
         self.btn_send.clicked.connect(self.btn_send_Clicked)
         self.btn_clear.clicked.connect(self.btn_clear_Clicked)
