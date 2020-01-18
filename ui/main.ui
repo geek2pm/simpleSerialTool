@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>698</width>
-    <height>354</height>
+    <width>700</width>
+    <height>331</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>340</x>
       <y>10</y>
-      <width>89</width>
-      <height>31</height>
+      <width>90</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="text">
@@ -32,8 +32,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>221</width>
-      <height>31</height>
+      <width>220</width>
+      <height>30</height>
      </rect>
     </property>
    </widget>
@@ -42,8 +42,8 @@
      <rect>
       <x>240</x>
       <y>10</y>
-      <width>86</width>
-      <height>31</height>
+      <width>90</width>
+      <height>30</height>
      </rect>
     </property>
     <item>
@@ -108,7 +108,7 @@ p, li { white-space: pre-wrap; }
       <x>610</x>
       <y>290</y>
       <width>80</width>
-      <height>31</height>
+      <height>30</height>
      </rect>
     </property>
     <property name="text">
@@ -120,8 +120,8 @@ p, li { white-space: pre-wrap; }
      <rect>
       <x>10</x>
       <y>290</y>
-      <width>591</width>
-      <height>31</height>
+      <width>590</width>
+      <height>30</height>
      </rect>
     </property>
    </widget>
@@ -130,8 +130,8 @@ p, li { white-space: pre-wrap; }
      <rect>
       <x>600</x>
       <y>10</y>
-      <width>89</width>
-      <height>31</height>
+      <width>90</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="text">
@@ -139,7 +139,6 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
