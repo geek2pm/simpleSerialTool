@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from PyQt5 import QtCore, QtGui, QtWidgets,uic
 from PyQt5.QtWidgets import QApplication
-import sys,time
+import sys,time,os
 import serial
 import serial.tools.list_ports
 
@@ -56,6 +56,7 @@ class Message(QtWidgets.QMainWindow, Ui_Dialog):
         super(Message, self).__init__(parent)
         self.setupUi(self)
         center_on_screen(self,QtWidgets)
+        self.setFixedSize(self.size())
 
 class App(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -67,6 +68,12 @@ class App(QtWidgets.QMainWindow, Ui_MainWindow):
         self.btn_clear.clicked.connect(self.btn_clear_Clicked)
         self.btn_about.clicked.connect(self.btn_about_Clicked)
         self.getCOMs()
+        self.setFixedSize(self.size())
+        # self.setWindowFlags(QtCore.Qt.WindowCloseButtonHint | QtCore.Qt.WindowMinimizeButtonHint)
+        # self.setWindowIcon(QtGui.QIcon('icon.jpeg'))
+        scriptDir = os.path.dirname(os.path.realpath(__file__))
+        self.setWindowIcon(QtGui.QIcon(scriptDir + os.path.sep + 'icon.jpeg'))
+        
 
     def btn_open_Clicked(self):
 
@@ -131,6 +138,7 @@ class App(QtWidgets.QMainWindow, Ui_MainWindow):
         self.getCOMsThread.start()
     
     def on_data_coms(self, ports):
+        self.btn_send.setEnabled(False)
         if len(ports)>0:
             self.btn_open.setEnabled(True)
             self.btn_clear.setEnabled(True)
@@ -142,7 +150,7 @@ class App(QtWidgets.QMainWindow, Ui_MainWindow):
             self.setWindowTitle("{} ({})".format(TITLE,"ready to open"))
         else:
             self.btn_open.setEnabled(False)
-            self.btn_send.setEnabled(False)
+            
             self.btn_clear.setEnabled(False)
             self.btn_open.setText('open')
             self.setWindowTitle("{} ({})".format(TITLE,"no device found"))
